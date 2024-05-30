@@ -54,7 +54,7 @@
         name: all
         target: /app/schema/backend.sql
         login_user: root
-        login_password: DevOps321
+        login_password: ExpenseApp@1
         login_host: mysql-dev.shujathdevops.online
 
     - name: Start backend service

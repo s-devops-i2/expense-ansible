@@ -1,4 +1,4 @@
-- name: Playbook for frontend
+- name: Playbook for mysql
   hosts: all
   become: yes
   tasks:
