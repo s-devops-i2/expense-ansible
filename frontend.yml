@@ -1,35 +1,5 @@
 - name: Playbook for frontend
   hosts: all
   become: yes
-  tasks:
-    - name: Install Nginx
-      ansible.builtin.dnf:
-        name: nginx
-        state: latest
-
-    - name: Copy a config file
-      ansible.builtin.copy:
-        src: expense.conf
-        dest: /etc/nginx/default.d/expense.conf
-
-    - name: remove Old contents
-      ansible.builtin.file:
-        path: /usr/share/nginx/html
-        state: absent
-
-    - name: Creating Directory
-      ansible.builtin.file:
-        path: /usr/share/nginx/html
-        state: directory
-
-    - name: Download App contents
-      ansible.builtin.unarchive:
-        src: https://expense-artifacts.s3.amazonaws.com/expense-frontend-v2.zip
-        dest: /usr/share/nginx/html
-        remote_src: yes
-
-    - name: Start Nginx
-      ansible.builtin.systemd_service:
-        name: nginx
-        state: restarted
-        enabled: true
+  roles:
+    - frontend
