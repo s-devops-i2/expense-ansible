@@ -43,10 +43,17 @@
         path: /app
         state: latest
 
-    - name: Install mysql
+    - name: Install mysql client
       ansible.builtin.dnf:
         name: mysql
         state: installed
+
+    - name: Install multi python packages PyMySQL cryptography
+      ansible.builtin.pip:
+        name:
+          - PyMySQL
+          - cryptography
+        executable: pip3.9
 
     - name: Load Schema
       community.mysql.mysql_db:
