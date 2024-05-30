@@ -14,12 +14,12 @@
 
     - name: remove Old contents
       ansible.builtin.file:
-        path: /app
+        path: /usr/share/nginx/html
         state: absent
 
     - name: Creating Directory
       ansible.builtin.file:
-        path: /app
+        path: /usr/share/nginx/html
         state: directory
 
     - name: Download App contents
