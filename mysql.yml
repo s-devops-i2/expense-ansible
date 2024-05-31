@@ -5,9 +5,4 @@
     - mysql
 
 
-#print_task_heading "Setting up MySQL password"
-#echo 'show databases' | mysql -h mysql-dev.shujathdevops.online -uroot -p${mysql_root_password} &>>${LOG}
-#if [ $? -ne 0 ]; then
-#mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG
-#fi
-#print_status $?
+
