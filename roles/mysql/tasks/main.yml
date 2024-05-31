@@ -36,3 +36,4 @@
 
 - name: Setting up MySQL password
   ansible.builtin.shell: mysql_secure_installation --set-root-pass ExpenseApp@1
+  when: mysql_connection_output.failed is true
