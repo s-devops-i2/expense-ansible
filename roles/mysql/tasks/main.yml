@@ -22,27 +22,7 @@
       - cryptography
     executable: pip3.9
 
-- name: Load Schema
-  community.mysql.mysql_db:
-    state: import
-    name: all
-    target: /app/schema/backend.sql
-    login_user: root
-    login_password: ExpenseApp@1
-    login_host: mysql-dev.shujathdevops.online
-- name: Install mysql client
-  ansible.builtin.dnf:
-    name: mysql
-    state: installed
-
-- name: Install multi python packages PyMySQL cryptography
-  ansible.builtin.pip:
-    name:
-      - PyMySQL
-      - cryptography
-    executable: pip3.9
-
-- name: Get MySQL version with non-default credentials
+- name: Check the DB connection with our password
   community.mysql.mysql_info:
     login_user: root
     login_password: ExpenseApp@1
