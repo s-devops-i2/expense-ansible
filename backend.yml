@@ -1,5 +1,0 @@
-- name: Playbook for backend
-  hosts: all
-  become: yes
-  roles:
-    - backend
